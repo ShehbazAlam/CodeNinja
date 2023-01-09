@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}videos{% endblock title %}
+
+{% block intro %}Watch and Code{% endblock intro %}
+
+{% block introtext %}Watch my video tutorials and learn to code{% endblock introtext %}
+
+{% block bg %}style="background: url({% static 'images/Programmer-pana.png' %});"{% endblock bg %}
+
+{% block pagedesc %}{% endblock pagedesc %}
+
+{% block keywords %}{% endblock keywords %}
+{% block body %}
+
+  <section class="portfolio-area section-gap" id="portfolio">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content col-lg-10">
+                <div class="title text-center">
+                    <h1 class="mb-10">Check Out my Most Recent Works</h1>
+                    <p>Here is a quick glance of some of my recent works.</p>
+                </div>
+            </div>
+        </div>
+  
+        
+        <div class="filters">
+            <ul>
+                <li class="active" data-filter="*">All</li>
+                <li data-filter=".python">python</li>
+                <li data-filter=".cpp">C++</li>
+                <li data-filter=".java">Java</li>
+                <li data-filter=".php">PHP</li>
+                <li data-filter=".html">HTML</li>
+                <li data-filter=".other">Other</li>
+            </ul>
+        </div>
+        <form action="{% url 'vsearch'%}" method="get">
+        <div class="wrap">
+            <div class="search">
+               <input type="text" name="querry" class="searchTerm" placeholder="What are you looking for?">
+               <button type="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
+            </div>
+        </div>
+    </form>
+        <div class="filters-content">
+            <div class="row grid"  id="content">
+
+                {% for video in videos %}
+
+                <a href="{% url 'vdetails' video.title %}">
+
+                    <div class="single-portfolio col-sm-4 all {{ video.lang}}">
+                        <div class="item">
+                            <img src="{{ video.image.url }}" alt="Work 1" style="height: 250px;">
+                            <div class="p-inner">
+                                <h4>{{ video.title }}</h4>
+                            <div class="cat">{{ video.pub_date | timesince }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </a>
+             {% endfor %}
+           
+            </div>
+        </div>
+  
+    </div>
+    <p class="gtp ">Click Picture to get more Information.</p>
+  </section>
+{% endblock body %}

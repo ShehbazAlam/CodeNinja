@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block intro %}Code Ninja{% endblock intro %}
+
+{% block introtext %}Best Place to Learn Coding{% endblock introtext %}
+
+{% block bg %}style="background: url({% static 'images/bg.png' %});"{% endblock bg %}
+
+{% block pagedesc %}{% endblock pagedesc %}
+
+{% block keywords %}programmer, developer, python, freelancer{% endblock keywords %}
+ {% block body %}
+<section class="service-area section-gap relative " id="about">
+  <div class="container ">
+      <div class="row d-flex justify-content-center ">
+          <div class="menu-content pb-60 col-lg-10 ">
+              <div class="title text-center ">
+                  <h1 class="mb-10 text">About Me</h1>
+                  <p>All you need to know about me</p>
+              </div>
+          </div>
+      </div>
+  </div>
+{% for about in about %}
+
+  <div class="content">
+    <div class="aboutimg">
+        <img src="{{ about.aboutimg.url }}" alt="">
+    </div>
+    <div class="abouttext">
+        <p class="atext">{{about.description | safe}}</p>
+
+    <a href="https://fiverr.com/shehbaz_alam_b" class="primary-btn text-uppercase">Hire Me</a>
+    </div>
+</div>
+   
+  {% endfor %}
+</section>
+<!-- End banner Area -->
+<section class="service-area section-gap relative " id="service">
+  <div class="overlay overlay-bg "></div>
+  <div class="container ">
+      <div class="row d-flex justify-content-center ">
+          <div class="menu-content pb-60 col-lg-10 ">
+              <div class="title text-center ">
+                  <h1 class="mb-10 text-white ">Service I Provide</h1>
+                  <p>I offer a range of services for business and individuals.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End service Area -->
+<!-- Start services Area -->
+<section class="services-area pb-100 ">
+  <div class="container ">
+      <div class="row ">
+        {% for service in services %}
+        <div class="col-lg-4 ">
+            <div class="single-service ">
+                <img class="img-fluid " src="{{ service.logo}} " alt="">
+                <h4>{{ service.name }}</h4>
+                <p>
+                {{service.description}}
+              </p>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+</section>
+ <!-- Start portfolio-area Area -->
+ <section class="portfolio-area section-gap" id="portfolio">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content col-lg-10">
+                <div class="title text-center">
+                  <h1 class="mb-10">Check Out my Most Recent Works</h1>
+                  <p>Here is a quick glance of some of my recent works.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters-content">
+            <div class="row grid">
+
+                <a href="/videos/">
+                        <div class="single-portfolio col-sm-4 all corporate agency">
+                            <div class="item">
+                                <img src="{% static 'images/shangrila_resort_skardu.jpg' %}" alt="Work 1" style="height: 250px;">
+                                <div class="p-inner">
+                                    <h4>Videos</h4>
+                                    <div class="cat">Check out my Videos</div>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+                <a href="/blog/">
+                    <div class="single-portfolio col-sm-4 all personal">
+                        <div class="item">
+                            <img src="{% static 'images/manthal_rock_(buddhist_inscriptions),_skardu,_mix_view.jpg' %}" alt="Work 1" style="height: 250px;">
+                            <div class="p-inner">
+                                <h4>Blogs</h4>
+                                <div class="cat">Read my Blogs</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="/projects/">
+                    <div class="single-portfolio col-sm-4 all agency">
+                        <div class="item">
+                            <img src="{% static 'images/katpana_skardu.jpg' %}" alt="Work 1" style="height: 250px;">
+                            <div class="p-inner">
+                                <h5>Projects</h5>
+                                <div class="cat">Browse my Projects</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  
+</section>
+<!-- End portfolio-area Area -->
+
+<section class="review-area section-gap " id="testimonial ">
+    <div class="container ">
+        <div class="row d-flex justify-content-center ">
+            <div class="menu-content pb-60 col-lg-10 ">
+                        <div class="title text-center ">
+                    <h1 class="mb-10 ">Testimonials</h1>
+                    <p>What people think about me</p>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+           
+           {% for testimonial in testimonials %}
+            <div class="col-lg-6 ">
+                <div class="single-review ">
+                    <img src="{{ testimonial.image.url}}" alt=" ">
+                    <div class="title d-flex flex-row ">
+                        <a href="# ">
+                            <h4>{{testimonial.name}}</h4>
+                        </a>
+                        
+                    </div>
+                    <p>
+                        {{testimonial.content}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+ {% endblock body %}
+

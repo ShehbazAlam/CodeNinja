@@ -1,0 +1,60 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{% block title %}{{ video_details.title}}{% endblock title %}
+{% block pagedesc %}
+{{video_details.description}}
+{% endblock pagedesc %}
+
+{% block keywords %}
+{{video_details.tags}}
+{% endblock keywords %}
+
+{% block body %}
+<div class="vidcontainer">
+
+    <div class="main-video-container">
+       <!-- <video src="{{ video_details.link }}" loop controls class="main-video"></video> -->
+       <iframe src="{{ video_details.link }}" frameborder="0" loop controls class="main-video"></iframe>
+       <h3 class="main-vid-title">{{ video_details.title }}</h3>
+       
+    </div>
+ 
+    <div class="video-list-container">
+      {% for video in relvideo %}
+      <a href="{% url 'vdetails' video.title %}">
+       <div class="list {% if video.title == video_details.title %} active{% endif %}">
+          <img src="{{ video.image.url }}" class="list-video"></img>
+          <h3 class="list-title">{{ video.title }}</h3>
+       </div>
+      </a>
+       {% endfor %}
+       
+    </div>
+ 
+ </div>
+ <div class="vidcontainer">
+
+   <div class="main-video-container">
+      <div>
+         <h1 class="text-center text-heading"> Video Details</h1>
+         {{ video_details.description | safe}}
+      </div>
+      
+   </div>
+
+   <div class="video-list-container">
+      <h1 class="text-capitalize text-center text-title">Recent Videos</h1>
+     {% for video in recentvideo %}
+     <a href="{% url 'vdetails' video.title %}">
+      <div class="list mb-1 {% if video.title == video_details.title %} active{% endif %}">
+         <img src="{{ video.image.url }}" class="list-video"></img>
+         <h3 class="list-title">{{ video.title }}</h3>
+      </div>
+     </a>
+      {% endfor %}
+      
+   </div>
+
+</div>
+{% endblock body %}
