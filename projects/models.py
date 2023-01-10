@@ -22,7 +22,10 @@ class Project(models.Model):
     
     
 class ProjectComments(models.Model):
-    project = models.ForeignKey(Project, verbose_name=("Blog"), on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     comment = models.TextField()
     commentor = models.CharField(max_length=50)
-    parent = models.ForeignKey('self', verbose_name=("Reply to"), on_delete=models.CASCADE, null= True)
+   
+    def __str__(self):
+       return self.commentor
+   

@@ -26,5 +26,4 @@ class BlogComments(models.Model):
     blog = models.ForeignKey(Blog, verbose_name=("Blog"), on_delete=models.CASCADE)
     comment = models.TextField()
     commentor = models.CharField(max_length=50)
-    parent = models.ForeignKey('self', verbose_name=("Reply to"), on_delete=models.CASCADE, null= True)
     
