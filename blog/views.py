@@ -29,9 +29,9 @@ def comment(request):
         comment = request.POST.get('comment')
         blog = request.POST.get('blog')
         cBlog = Blog.objects.get(title=blog)
-        pcomment = BlogComments(Blog=cBlog, comment=comment, commentor=commentor)
+        pcomment = BlogComments(blog=cBlog, comment=comment, commentor=commentor)
         pcomment.save()
 
         messages.success(request,'comment added sucessfully')
         
-    return redirect(f"/Blogs/view/{pro}")
+    return redirect(f"/blog/read/{pro}")
