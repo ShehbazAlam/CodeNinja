@@ -14,6 +14,7 @@ class Services(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=150)
     logo = models.ImageField(upload_to="static/images")
+    link = models.CharField(default= 'https://fiverr.com/shehbaz_alam_b',max_length=250)
     
     def __str__(self) -> str:
         return super().__str__()
