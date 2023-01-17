@@ -142,7 +142,14 @@ a:hover {
     border-radius: 5px;
 }
 
+.post-content{
+    text-decoration: none;
+    text-transform: none;
+}
 
+.post-content ol{
+    list-style: decimal;
+}
 /* Media Screens for responsive design */
 
 @media only screen and (max-width: 600px){
