@@ -1,8 +1,8 @@
 # CodeNinja
 
 ## Introduction
-A Personal Portfolio Website for Programmers and Youtubers.
-This Website Showcases your Projects and Skills and also gives you the ability to create and publish Blogs and Video Tutorials on your own Personal Portfolio site.
+A Personal Portfolio Website for Everyome.
+Showcase your Projects, Skills and Portfolio and engage with learners by creating and publishing Blogs and Video Tutorials on your own Personal Portfolio site.
 
 
 ### Overview 
