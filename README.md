@@ -1,9 +1,51 @@
 # CodeNinja
-My website
 
-### What is it 
-this is my personal blog site
+## Introduction
+A Personal Portfolio Website for Programmers and Youtubers.
+This Website Showcases your Projects and Skills and also gives you the ability to create and publish Blogs and Video Tutorials on your own Personal Portfolio site.
 
-# Review
 
-it is a simple website built in django to support my youtube channel
+### Overview 
+An All in One Solution for passionate Programmers, Bloggers and Youtubers.
+
+### Tech Stack
+*Programming Language:* **Python**
+
+*Web Framework:* **Django**
+
+*Frontend Languages:* **HTML, CSS, JavaScript**
+
+*Database:* **SQLite**
+
+## Local Setup
+
+**Step 1:** Clone this repository
+
+**Step 2:** Open The Project in VS Code or any other code editor/IDE
+
+**Step 3:** Open Terminal and navigate to the project directory
+
+**Step 4:** Create new python virtual environment
+
+**Step 5:** activate the python virtual env
+
+**Step 6:** run the following command
+
+```bash
+pip install -r requirements.txt
+```
+
+**Step 7:** now run
+
+```bash
+python manage.py migrate
+```
+
+**Step 8:** Finally run
+
+```bash
+python manage.py runserver
+```
+
+**Step 9:** Open your Web Browser and type the following address in the search bar
+`http://127.0.0.1:8000/`
